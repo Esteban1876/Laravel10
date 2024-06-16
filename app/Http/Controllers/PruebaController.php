@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 
 class PruebaController extends Controller
 {
-    public function index() {
-        return 'Prueba de la función index del grupo prueba';
-    }
+   public function index() {
+      return view('prueba.index');
+   }
 
-    public function create($elemento) {
-        return 'Se creará el elemento: ' . $elemento;
-    }
+   public function create($elemento) {
+      return view('prueba.create', ['elemento' => $elemento]);
+   }
 
-    public function show() {
-        return 'Se mostrarán todos los elementos de prueba';
-    }
+   public function show() {
+      return view('prueba.show');  
+   }
 }

@@ -5,5 +5,12 @@
 @endsection
 
 @section('contenido')
-   <h2>Prueba de la función index del grupo prueba</h2>
+<h1>Listado general de pruebas</h1>
+<ul>
+   @foreach ($datos as $dato)
+   <li>
+      <a href="{{route('prueba.mostrar', $dato->id)}}">{{$dato->nombre}}</a>
+   </li>
+   @endforeach
+</ul>
 @endsection

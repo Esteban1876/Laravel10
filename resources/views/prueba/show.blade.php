@@ -5,5 +5,8 @@
 @endsection
 
 @section('contenido')
-   <h2>Se mostrarán todos los elementos</h2>
+   <h2>Información de la prueba</h2>
+   <p>Nombre: {{$datos->nombre}}</p>
+   <p>Descripción: {{$datos->descripcion}}</p>
+   <p>Aprobada: {{$datos->aprobada == true ? 'Aprobada' : 'Denegada'}}</p>
 @endsection

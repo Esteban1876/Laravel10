@@ -9,9 +9,9 @@ Route::get('/', function () {
 
 // prueba con uso de controlador y grupo
 Route::controller(PruebaController::class)->group(function (){
-   Route::get('/prueba', 'index', function () {});
-   Route::get('/prueba/mostrar', 'show', function () {});
-   Route::get('/prueba/create/{elemento}', 'create', function () {});
+   Route::get('/prueba', 'index', function () {})->name('prueba.index');
+   Route::get('/prueba/mostrar/{id}', 'show', function () {})->name('prueba.mostrar');
+   Route::get('/prueba/create/{elemento}', 'create', function () {})->name('prueba.crear');
 });
 
 

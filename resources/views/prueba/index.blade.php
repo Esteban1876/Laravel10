@@ -6,6 +6,7 @@
 
 @section('contenido')
 <h1>Listado general de pruebas</h1>
+<a href="{{route('prueba.crear')}}">Crear prueba</a>
 <ul>
    @foreach ($datos as $dato)
    <li>

@@ -11,7 +11,8 @@ Route::get('/', function () {
 Route::controller(PruebaController::class)->group(function (){
    Route::get('/prueba', 'index', function () {})->name('prueba.index');
    Route::get('/prueba/mostrar/{id}', 'show', function () {})->name('prueba.mostrar');
-   Route::get('/prueba/create/{elemento}', 'create', function () {})->name('prueba.crear');
+   Route::post('/prueba/create', 'store', function () {})->name('prueba.store');
+   Route::get('/prueba/create/', 'create', function () {})->name('prueba.crear');
 });
 
 

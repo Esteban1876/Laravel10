@@ -14,8 +14,17 @@ class PruebaController extends Controller
       return view('prueba.index', ['datos' => $datos]);
    }
 
-   public function create($elemento) {
-      return view('prueba.create', ['elemento' => $elemento]);
+   public function create() {
+      return view('prueba.create');
+   }
+
+   public function store(Request $request) {
+      $Prueba = new Prueba();
+      $Prueba->nombre = $request->nombre;
+      $Prueba->descripcion = $request->descripcion;
+      $Prueba->save();
+
+      return redirect()->route('prueba.mostrar', $Prueba->id);
    }
 
    public function show($id) {

@@ -3,10 +3,8 @@
 @section('titulo')
    Mostrar
 @endsection
-
+<a href="{{route('prueba.index')}}">Volver al listado</a>
 @section('contenido')
-   <h2>Información de la prueba</h2>
-   <p>Nombre: {{$datos->nombre}}</p>
+   <h2>Nombre: {{$datos->nombre}}</h2>
    <p>Descripción: {{$datos->descripcion}}</p>
-   <p>Aprobada: {{$datos->aprobada == true ? 'Aprobada' : 'Denegada'}}</p>
 @endsection

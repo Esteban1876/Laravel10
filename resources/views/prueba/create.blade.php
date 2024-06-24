@@ -5,5 +5,14 @@
 @endsection
 
 @section('contenido')
-   <h2>Se creará el siguiente elemento {{$elemento}}</h2>
+   <form action="{{route('prueba.store')}}" method="POST">
+      @csrf
+      <label>Nombre: </label>
+      <input type="text" name="nombre" id="nombre">
+      <br>
+      <label>Descripción: </label>
+      <input type="text" name="descripcion" id="descripcion">
+      <br>
+      <button type="submit">Crear</button>
+   </form>
 @endsection

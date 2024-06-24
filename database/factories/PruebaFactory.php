@@ -15,8 +15,7 @@ class PruebaFactory extends Factory
    {
       return [
          'nombre' => $this->faker->sentence(),
-         'descripcion'=> $this->faker->paragraph(2),
-         'aprobada'=> $this->faker->randomElement([true, false])
+         'descripcion'=> $this->faker->paragraph(2)
       ];
    }
 }

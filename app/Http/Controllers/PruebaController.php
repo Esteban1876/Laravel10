@@ -27,6 +27,21 @@ class PruebaController extends Controller
       return redirect()->route('prueba.mostrar', $Prueba->id);
    }
 
+   public function edit($id) {
+      $prueba = new Prueba();
+      $datos = $prueba::find($id);
+      return view('prueba.edit', ['datos' => $datos]);
+   }
+
+   public function update(Request $request){
+      $prueba = new Prueba();
+      $prueba->nombre = $request->nombre;
+      $prueba->descripcion = $request->descripcion;
+      $prueba->save();
+      
+      return redirect()->route('prueba.mostrar', $prueba->id);
+   }
+
    public function show($id) {
       $Prueba = new Prueba();
       $datos = $Prueba::find($id);

@@ -13,6 +13,8 @@ Route::controller(PruebaController::class)->group(function (){
    Route::get('/prueba/mostrar/{id}', 'show', function () {})->name('prueba.mostrar');
    Route::post('/prueba/create', 'store', function () {})->name('prueba.store');
    Route::get('/prueba/create/', 'create', function () {})->name('prueba.crear');
+   Route::get('/prueba/{id}/edit', 'edit', function () {})->name('prueba.edit');
+   Route::put('/prueba/update', 'update', function () {})->name('prueba.update');
 });
 
 

@@ -13,12 +13,17 @@ class PruebaController extends Controller
       $datos = $Prueba::all();
       return view('prueba.index', ['datos' => $datos]);
    }
-
+   
    public function create() {
       return view('prueba.create');
    }
 
    public function store(Request $request) {
+      $request->validate([
+         'nombre' => 'required',
+         'descripcion' => 'required'
+      ]);
+
       $Prueba = new Prueba();
       $Prueba->nombre = $request->nombre;
       $Prueba->descripcion = $request->descripcion;
@@ -34,6 +39,11 @@ class PruebaController extends Controller
    }
 
    public function update(Request $request){
+      $request->validate([
+         'nombre' => 'required',
+         'descripcion' => 'required'
+      ]);
+      
       $prueba = new Prueba();
       $prueba->nombre = $request->nombre;
       $prueba->descripcion = $request->descripcion;

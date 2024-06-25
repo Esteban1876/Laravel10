@@ -9,10 +9,17 @@
       @csrf
       @method('PUT')
       <label>Nombre: </label>
-      <input type="text" name="nombre" id="nombre" value="{{$datos->nombre}}">
+      <input type="text" name="nombre" id="nombre" value="{{old('nombre', $datos->nombre)}}">
+      @error('nombre')
+         <span>{{$message}}</span>
+      @enderror
       <br>
+
       <label>Descripción: </label>
-      <input type="text" name="descripcion" id="descripcion" value="{{$datos->descripcion}}">
+      <input type="text" name="descripcion" id="descripcion" value="{{old('descripcion', $datos->descripcion)}}">
+      @error('descripcion')
+         <span>{{$message}}</span>
+      @enderror
       <br>
       <button type="submit">Editar</button>
    </form>

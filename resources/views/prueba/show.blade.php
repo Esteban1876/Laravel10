@@ -3,7 +3,7 @@
 @section('titulo')
    Mostrar
 @endsection
-<a href="{{route('prueba.index')}}">Volver al listado</a>
+<a href="{{route('prueba.index')}}">Volver al listado</a><br>
 <a href="{{route('prueba.edit', $datos->id)}}">Editar prueba</a>
 
 @section('contenido')

@@ -9,12 +9,13 @@ Route::get('/', function () {
 
 // prueba con uso de controlador y grupo
 Route::controller(PruebaController::class)->group(function (){
-   Route::get('/prueba', 'index', function () {})->name('prueba.index');
-   Route::get('/prueba/mostrar/{id}', 'show', function () {})->name('prueba.mostrar');
-   Route::post('/prueba/create', 'store', function () {})->name('prueba.store');
-   Route::get('/prueba/create/', 'create', function () {})->name('prueba.crear');
-   Route::get('/prueba/{id}/edit', 'edit', function () {})->name('prueba.edit');
-   Route::put('/prueba/update', 'update', function () {})->name('prueba.update');
+   Route::get('/prueba', 'index')->name('prueba.index');
+   Route::get('/prueba/mostrar/{id}', 'show')->name('prueba.mostrar');
+   Route::post('/prueba/create', 'store')->name('prueba.store');
+   Route::get('/prueba/create/', 'create')->name('prueba.crear');
+   Route::get('/prueba/{id}/edit', 'edit')->name('prueba.edit');
+   Route::put('/prueba/update', 'update')->name('prueba.update');
+   Route::delete('/prueba/delete/{id}', 'destroy')->name('prueba.destroy');   
 });
 
 

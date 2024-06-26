@@ -48,4 +48,11 @@ class PruebaController extends Controller
       $datos = $Prueba::find($id);
       return view('prueba.show', ['datos' => $datos]);  
    }
+
+   public function destroy($id) {
+      $prueba = new Prueba();
+      $prueba::destroy($id);
+      
+      return redirect()->route('prueba.index');
+   }
 }

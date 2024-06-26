@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PruebaRequest;
 use App\Models\Prueba;
 use Illuminate\Http\Request;
 
@@ -18,12 +19,7 @@ class PruebaController extends Controller
       return view('prueba.create');
    }
 
-   public function store(Request $request) {
-      $request->validate([
-         'nombre' => 'required',
-         'descripcion' => 'required'
-      ]);
-
+   public function store(PruebaRequest $request) {
       $Prueba = new Prueba();
       $Prueba->nombre = $request->nombre;
       $Prueba->descripcion = $request->descripcion;
@@ -38,12 +34,7 @@ class PruebaController extends Controller
       return view('prueba.edit', ['datos' => $datos]);
    }
 
-   public function update(Request $request){
-      $request->validate([
-         'nombre' => 'required',
-         'descripcion' => 'required'
-      ]);
-      
+   public function update(PruebaRequest $request){
       $prueba = new Prueba();
       $prueba->nombre = $request->nombre;
       $prueba->descripcion = $request->descripcion;
